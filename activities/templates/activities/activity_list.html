@@ -22,13 +22,13 @@
           <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
             <a href="{% url 'activities:activity' pk=activity.id %}">
                 <div clas="row">
-                    <div class="title orangeColor">
+                    <div class="title {% if forloop.counter0|divisibleby:'2' %} orangeColor {% else %} greyColor {% endif %}">
                         {{ activity.title }}
                       </div>
                 </div>
               </a>
               <div class="row">
-                  <div class="orangeBg article whiteColor">
+                  <div class="{% if forloop.counter0|divisibleby:'2' %} orangeBg {% else %} greyBg {% endif %} article whiteColor">
                     <a href="{% url 'activities:activity' pk=activity.id slug=activity.slug %}">
                       {% if activity.cover %}<img width="100%" src="{{ activity.cover.url }}" alt="{{ activity.cover.filename }}">{% endif %}
                       <p>

@@ -81,7 +81,7 @@
       </div>
       <div class="row article greyBg">
         {% for day, sessions in days_sessionsPerDay %}
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 center border-right">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 center whiteColor border-right">
           <p><b>{{ day|date:"l" }}</b><br><br>
             {% for session in sessions %}
               {{ session.sport.name }} ({{ session.start_time }}-{{ session.end_time }})<br>

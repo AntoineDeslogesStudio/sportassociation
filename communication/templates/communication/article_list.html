@@ -14,13 +14,13 @@
           <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
             <a href="{% url 'communication:article' pk=article.id slug=article.slug %}">
                 <div clas="row">
-                    <div class="title orangeColor">
+                    <div class="title {% if forloop.counter0|divisibleby:'2' %} orangeColor {% else %} greyColor {% endif %}">
                         {{ article.title }}
                       </div>
                 </div>
               </a>
               <div class="row">
-                  <div class="orangeBg article whiteColor">
+                  <div class="{% if forloop.counter0|divisibleby:'2' %} orangeBg {% else %} greyBg {% endif %} article whiteColor">
                     <a href="{% url 'communication:article' pk=article.id slug=article.slug %}">
                       <p>
                         {% if article.cover %}<img width="100%" src="{{ article.cover.url }}" alt="{{ article.cover.filename }}">{% endif %}
